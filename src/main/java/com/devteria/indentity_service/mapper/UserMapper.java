@@ -12,7 +12,7 @@ import org.mapstruct.MappingTarget;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
     User toUser(UserCreationRequest request);
-    @Mapping(source = "", target = "") // máp để có the trung nhau
+    @Mapping(source = "firstName", target = "lastName") // máp để có the trung nhau
     UserResponse toUserResponse(User user);
     void updateUser(@MappingTarget User user, UserUpdateRequest request); // kế thừa cho update
 }

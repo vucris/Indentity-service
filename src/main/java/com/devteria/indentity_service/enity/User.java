@@ -8,21 +8,25 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO) // IDENTITY giúp ID tăng đúng thứ tự trong MySQL
     Long id;
     String username;
     String password;
-    String firstName; // Sửa từ "firsName"
+    String firstName;
     String lastName;
     LocalDate dob;
-
+    Set<String> roles;
 
 }
